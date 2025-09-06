@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cisco Packet Tracer Exploration Report</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 1.6;
+    }
+    .paper {
+      background: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+    }
+    .abstract {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-left: 4px solid #007bff;
+    }
+    .section-title {
+      border-bottom: 2px solid #007bff;
+      color: #333;
+    }
+    .image-figure {
+      border: 1px solid #ddd;
+      background: #fafafa;
+    }
+    .caption {
+      font-style: italic;
+      color: #666;
+      font-size: 0.9em;
+    }
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      body {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 10px !important;
+        line-height: 1.3 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .paper {
+        box-shadow: none !important;
+        border: none !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 14px !important;
+        height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      header {
+        margin-bottom: 10px !important;
+      }
+      h1 {
+        font-size: 15px !important;
+        margin-bottom: 6px !important;
+        font-weight: bold !important;
+      }
+      h2 {
+        font-size: 12px !important;
+        margin: 6px 0 3px 0 !important;
+        font-weight: bold !important;
+        padding-bottom: 1px !important;
+        border-bottom: 1px solid #007bff !important;
+      }
+      .abstract {
+        padding: 6px !important;
+        margin-bottom: 8px !important;
+        background: #f8f9fa !important;
+        border: 1px solid #dee2e6 !important;
+        border-left: 3px solid #007bff !important;
+        font-size: 10px !important;
+      }
+      .section {
+        margin-bottom: 5px !important;
+        page-break-inside: avoid !important;
+      }
+      .grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+        align-items: start !important;
+      }
+      .grid.grid-cols-2 {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      .image-figure {
+        padding: 3px !important;
+        margin: 0 !important;
+        border: 1px solid #ddd !important;
+        background: #fafafa !important;
+        text-align: center !important;
+      }
+      .image-figure .grid {
+        gap: 2px !important;
+      }
+      .caption {
+        font-size: 8px !important;
+        font-style: italic !important;
+        color: #666 !important;
+        margin-top: 2px !important;
+      }
+      p {
+        font-size: 10px !important;
+        line-height: 1.3 !important;
+        margin: 2px 0 !important;
+        text-align: justify !important;
+      }
+      /* Larger image sizing for better visibility */
+      img[alt="Interface Overview"] {
+        height: 50px !important;
+        width: auto !important;
+      }
+      img[alt="Logical Mode"], img[alt="Physical Mode"] {
+        height: 80px !important;
+        width: auto !important;
+      }
+      img[alt="Device Selection"] {
+        height: 60px !important;
+        width: auto !important;
+      }
+      img[alt="Simulation Mode"] {
+        height: 120px !important;
+        width: auto !important;
+      }
+      img {
+        max-width: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
+      /* Ensure single page */
+      .space-y-6 > * {
+        margin-bottom: 4px !important;
+      }
+      /* Header layout */
+      header .flex {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        font-size: 9px !important;
+      }
+      header .text-left, header .text-right {
+        flex: 0 0 auto !important;
+      }
+      strong {
+        font-weight: bold !important;
+      }
+      /* Additional space savings */
+      .text-justify {
+        margin-bottom: 3px !important;
+      }
+      li {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+    @page {
+      margin: 0.25in;
+      size: A4;
+      @top-center {
+        content: none;
+      }
+      @bottom-center {
+        content: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="no-print fixed top-4 right-4 z-10">
+    <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded shadow">
+      Print Article
+    </button>
+  </div>
+  
+  <div class="max-w-4xl mx-auto p-8">
+    <article class="paper p-8">
+      <!-- Title and Authors -->
+      <header class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Cisco Packet Tracer Exploration Report</h1>
+        <div class="flex justify-between items-start text-sm">
+          <div class="text-left">
+            <p><strong>Name:</strong> Aisyah Currents</p>
+            <p><strong>NIM (Student ID):</strong> 25091397108</p>
+            <p><strong>Class:</strong> International</p>
+          </div>
+          <div class="text-right">
+            <p><strong>Lecturer:</strong></p>
+            <p>Dimas Novian Aditia Syahputra, S. Tr. T., M. Tr. T.</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Abstract -->
+      <div class="abstract p-4 rounded mb-6">
+        <p class="text-justify text-gray-700"><strong>Cisco Packet Tracer</strong> is a powerful simulation tool for learning and visualizing computer networks. This paper explores its interface and features, highlighting how it supports both practical design and conceptual understanding of networking principles.</p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="space-y-6">
+        
+        <!-- Section 1 -->
+        <section class="section">
+          <h2 class="section-title text-xl font-bold text-gray-800 pb-1 mb-4">1. Overview of the Interface</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <p class="text-justify mb-3">At the top, the menu and toolbar act as the control center, with icons that explain their functions when hovered over. Cisco Packet Tracer has two main views:</p>
+              
+              <p class="mb-2"><strong>Logical Mode:</strong> Works like the "blueprint" of a network, where you design, configure IP addresses, and test how devices communicate virtually.</p>
+              
+              <p class="mb-3"><strong>Physical Mode:</strong> Shows a real-world perspective, placing devices in racks, rooms, or buildings so you can visualize how a network might look in practice.</p>
+            </div>
+            
+            <figure class="image-figure p-3 rounded text-center">
+              <img src="img/image1.png" alt="Interface Overview" class="w-full h-24 object-contain mx-auto mb-3">
+              <div class="grid grid-cols-2 gap-3">
+                <img src="img/image2.png" alt="Logical Mode" class="w-full h-40 object-contain">
+                <img src="img/image3.png" alt="Physical Mode" class="w-full h-40 object-contain">
+              </div>
+              <figcaption class="caption mt-2">Figure 1: Main interface showing menu and toolbar options</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="section">
+          <h2 class="section-title text-xl font-bold text-gray-800 pb-1 mb-4">2. Device Selection and Workspace</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+            <figure class="image-figure p-3 rounded text-center">
+              <img src="img/image4.png" alt="Device Selection" class="w-full h-32 object-contain mx-auto">
+              <img src="img/image6.png" alt="Device Selection" class="w-full h-32 object-contain mx-auto">
+              <img src="img/image7.png" alt="Device Selection" class="w-full h-32 object-contain mx-auto">
+              <figcaption class="caption mt-2">Figure 2: Device selection panel with network components</figcaption>
+            </figure>
+            
+            <div>
+              <p class="text-justify mb-3">On the bottom left, the <strong>device-type selection box</strong> contains categories such as network devices (routers, switches, hubs), end devices (PCs, laptops, servers), connections (cables and wireless), and miscellaneous components (wireless routers, firewalls, IoT devices) that make scenarios more realistic.</p>
+              
+              <p class="text-justify">Packet Tracer supports <strong>multiuser connection</strong>, enabling several users to connect their simulations together for collaboration and larger network designs. The center workspace area serves as the main stage for dragging, dropping, and connecting devices.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="section">
+          <h2 class="section-title text-xl font-bold text-gray-800 pb-1 mb-4">3. Simulation and Learning</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <p class="text-justify mb-3">At the bottom right, users can switch between <strong>real-time mode</strong> and <strong>simulation mode</strong>. Real-time mode makes devices act as they would in real life, while simulation mode slows down processes, allowing observation of data packet travel step by step.</p>
+              
+              <p class="text-justify mb-3">The <strong>Event Table</strong> enables step-through simulation. Instead of instantaneous data movement, users can pause, forward, or examine packet-by-packet communication to understand device interactions.</p>
+            </div>
+            
+            <figure class="image-figure p-3 rounded text-center">
+              <img src="img/image5.png" alt="Simulation Mode" class="w-full h-64 object-contain mx-auto">
+              <figcaption class="caption mt-2">Figure 3: Simulation mode interface with event table</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="section">
+          <h2 class="section-title text-xl font-bold text-gray-800 pb-1 mb-4">4. Conclusion</h2>
+          <p class="text-justify">From this exploration, Cisco Packet Tracer proves to be more than just a tool. It serves as a comprehensive learning environment. Through its menus, workspace, and simulation features, users can visualize network construction, data flow, and device configuration. This experience transforms abstract networking concepts into concrete, understandable principles.</p>
+        </section>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
